@@ -4,9 +4,10 @@
     <title> Churn Detection Website </title>
 
     <link href="../static/css/styles.css" rel="stylesheet" type="text/css"/>
-    <link rel = "icon" href =  "../static/images/favicon32.png" type = "image/x-icon">
+    <link rel = "icon" href = "../static/images/favicon32.png" type = "image/x-icon">
 
     <link href="https://fonts.googleapis.com/css2?family=Nunito:wght@800&display=swap" rel="stylesheet">
+    <link href='https://fonts.googleapis.com/css?family=Nunito:400,300' rel='stylesheet' type='text/css'>
 
     <script type="text/javascript" src="https://ajax.googleapis.com/ajax/libs/jquery/2.1.3/jquery.min.js"> </script>
         <script type='text/javascript'>
@@ -45,9 +46,46 @@
         </div>
 
         <!-- Form Section -->
-        <div class='form_section'>
-            <form>
+        <div>
+            <form action='{{ url_for("predict") }}', method="POST">
+                <h2> Enter the details </h2>
 
+                <label for="tenure">Tenure</label>
+                <input type="text" id="tenure" name="tenure" placeholder="Number of years of service">
+
+                <label for="tech_support">Tech Support Service</label>
+                <select id='tech_support' name='tech_support'>
+                    <option value='Yes'> Yes </option>
+                    <option value='No'> No </option>
+                    <option value='No internet service'> No Internet Service </option>
+                </select>
+
+                <label for="online_security">Online Security Service</label>
+                <select id='online_security' name='online_security'>
+                    <option value='Yes'> Yes </option>
+                    <option value='No'> No </option>
+                    <option value='No internet service'> No Internet Service </option>
+                </select>
+
+                <label for="contract">Contract</label>
+                <select id='contract' name='contract'>
+                    <option value='Month-to-month'> Month to Month </option>
+                    <option value='One year'> One Year </option>
+                    <option value='Two year'> Two Year </option>
+                </select>
+
+                <label for="payment_method">Payment Method</label>
+                <select id='payment_method' name='payment_method'>
+                    <option value='Electronic check'> Electronic Check </option>
+                    <option value='Mailed check'> Mailed Check </option>
+                    <option value='Bank transfer (automatic)'> Bank Transfer </option>
+                    <option value='Credit card (automatic)'> Credit Card </option>
+                </select>
+
+                <label for="monthly_charges">Monthly Charges</label>
+                <input type="text" id="monthly_charges" name="monthly_charges" placeholder="250">
+
+                <button class='predict_button'> Predict </button>
             </form>
         </div>
     </body>
