@@ -133,6 +133,10 @@ select {
 
 /* About Section */
 
+.outer_div {
+    padding: 10px;
+}
+
 .about {
 	margin-left: 10px;
 	margin-right: 10px;
@@ -140,6 +144,11 @@ select {
 	border-style: solid;
     border-radius: 10px;
     border-color: #e74c3c;
+}
+
+.about_heading {
+    margin-left: 20px;
+    font-family: Arial, Helvetica, sans-serif;
 }
 
 .list_item {
