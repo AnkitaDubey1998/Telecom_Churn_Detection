@@ -1,5 +1,6 @@
 from flask import *
 import pickle
+import misc_functions as mf
 
 filename = 'GB_Churn_model.pkl'
 classifier = pickle.load(open(filename, 'rb'))
@@ -23,13 +24,9 @@ def predict():
         online_security = request.form['online_security']
         contract = request.form['contract']
         payment_method = request.form['payment_method']
-        print(tenure)
-        print(tech_support)
-        print(online_security)
-        print(contract)
-        print(payment_method)
-        print(monthly_charges)
-    return render_template("home.html")
+        data = mf.get_processed_data(monthly_charges, tenure, online_security, tech_support, contract, payment_method)
+        prediction = classifier.predict(data)[0]
+    return render_template("result.html", prediction=prediction)
 
 if __name__ == '__main__':
     app.run(debug=True)

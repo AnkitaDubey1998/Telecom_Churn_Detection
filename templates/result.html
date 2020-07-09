@@ -1,0 +1,34 @@
+<html>
+
+<head>
+    <title> Churn Detection Website </title>
+
+    <link href="../static/css/styles.css" rel="stylesheet" type="text/css"/>
+    <link rel = "icon" href = "../static/images/favicon32.png" type = "image/x-icon">
+
+    <link href="https://fonts.googleapis.com/css2?family=Nunito:wght@800&display=swap" rel="stylesheet">
+    <link href='https://fonts.googleapis.com/css?family=Nunito:400,300' rel='stylesheet' type='text/css'>
+</head>
+
+    <body>
+
+        <!-- Head Section  -->
+        <div class='head_Section'>
+            <h1> Telecom Churn Detection </h1>
+        </div>
+
+        <!-- Result Section -->
+        <div>
+            <h2> Prediction </h2>
+            <div class='result_section'>
+                {% if prediction == 0 %}
+                    <p class='result_statement'> <b> Great! Your customer is satisfied and will continue using your service <b> </b></p>
+                    <img src='../static/images/smile256.png'>
+                {% elif prediction == 1 %}
+                    <p class='result_statement'> <b> Alert! Your customer is not satisfied and may stop using your service </b> </p>
+                    <img src='../static/images/sad256.png'>
+                {% endif %}
+            </div>
+        </div>
+    </body>
+</html>
