@@ -2,7 +2,7 @@ from flask import *
 import pickle
 import misc_functions as mf
 
-filename = 'GB_Churn_model.pkl'
+filename = 'RF_Churn_model.pkl'
 classifier = pickle.load(open(filename, 'rb'))
 
 app = Flask(__name__)
