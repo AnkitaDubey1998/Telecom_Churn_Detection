@@ -4,5 +4,8 @@ numpy>=1.16.1
 scikit-learn>=0.23.1
 imblearn>=0.0
 imbalanced-learn>=0.7.0
-gunicorn>=19.9.0
-Jinja2>=2.10.3
+gunicorn==19.9.0
+Jinja2==2.10.1
+MarkupSafe==1.1.1
+Werkzeug==0.15.5
+itsdangerous==1.1.0
