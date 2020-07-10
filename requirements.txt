@@ -6,6 +6,3 @@ imblearn>=0.0
 imbalanced-learn>=0.7.0
 gunicorn>=20.0.4
 Jinja2>=2.10.3
-itsdangerous==1.1.0
-MarkupSafe==1.1.1
-Werkzeug==0.15.5
