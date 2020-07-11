@@ -8,6 +8,23 @@
 
     <link href="https://fonts.googleapis.com/css2?family=Nunito:wght@800&display=swap" rel="stylesheet">
     <link href='https://fonts.googleapis.com/css?family=Nunito:400,300' rel='stylesheet' type='text/css'>
+
+    <script>
+        function validateForm() {
+            var tenure = document.forms['my_form']['tenure'].value;
+            var monthly_charges = document.forms['my_form']['monthly_charges'].value;
+
+            if (isNaN(tenure) || tenure < 1) {
+                alert("Tenure must be numeric and greater than 1");
+                return false;
+            } else if(isNaN(monthly_charges) || monthly_charges < 1 || monthly_charges> 118) {
+                alert("Monthly charge must be numeric and between 1 and 118");
+                return false;
+            } else {
+                return true;
+            }
+        }
+    </script>
 </head>
 
     <body>
@@ -23,11 +40,11 @@
 
         <!-- Form Section -->
         <div>
-            <form action='{{ url_for("predict") }}', method="POST">
+            <form name='my_form' action='/predict' method="POST" onsubmit="return validateForm()">
                 <h2> Enter the details </h2>
 
                 <label for="tenure">Tenure</label>
-                <input type="text" id="tenure" name="tenure" placeholder="Number of years of service">
+                <input type="text" id="tenure" name="tenure" placeholder="Number of years of service" required>
 
                 <label for="tech_support">Tech Support Service</label>
                 <select id='tech_support' name='tech_support'>
@@ -59,9 +76,9 @@
                 </select>
 
                 <label for="monthly_charges">Monthly Charges</label>
-                <input type="text" id="monthly_charges" name="monthly_charges" placeholder="250">
+                <input type="text" id="monthly_charges" name="monthly_charges" placeholder="250" required>
 
-                <button class='predict_button'> Predict </button>
+                <input type="submit" value="Predict" class="predict_button">
             </form>
         </div>
     </body>
