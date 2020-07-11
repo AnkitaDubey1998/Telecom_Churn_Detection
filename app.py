@@ -26,7 +26,7 @@ def predict():
         payment_method = request.form['payment_method']
         data = mf.get_processed_data(monthly_charges, tenure, online_security, tech_support, contract, payment_method)
         prediction = classifier.predict(data)[0]
-    return render_template("result.html", prediction=prediction)
+        return render_template("result.html", prediction=prediction)
 
 if __name__ == '__main__':
     app.run(debug=True)
