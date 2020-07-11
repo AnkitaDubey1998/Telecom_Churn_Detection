@@ -1,7 +1,5 @@
 import pandas as pd
 
-pd.options.mode.chained_assignment = None
-
 train = pd.read_csv(r'datasets/train_cleaned.csv', na_values=[' ','??'])
 train.drop(train.columns[[0]], axis=1, inplace=True)
 

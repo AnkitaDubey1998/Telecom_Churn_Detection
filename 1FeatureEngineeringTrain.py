@@ -1,6 +1,5 @@
 import pandas as pd
 
-pd.options.mode.chained_assignment = None
 df = pd.read_csv(r'datasets/original/telco_customer_churn.csv', na_values=[' ','??'])
 df.drop(columns='customerID', inplace=True)
 

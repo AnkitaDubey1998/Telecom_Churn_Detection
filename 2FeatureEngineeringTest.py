@@ -1,7 +1,5 @@
 import pandas as pd
 
-pd.options.mode.chained_assignment = None
-
 df = pd.read_csv(r'datasets/uncleaned/test_uncleaned.csv', na_values=[' ','??'])
 df.drop(df.columns[[0]], axis=1, inplace=True)
 
