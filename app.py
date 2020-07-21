@@ -2,8 +2,19 @@ from flask import *
 import pickle
 import misc_functions as mf
 
-filename = 'GB_Churn_model.pkl'
-classifier = pickle.load(open(filename, 'rb'))
+# filename = 'GB_Churn_model.pkl'
+# classifier = pickle.load(open(filename, 'rb'))
+
+import pandas as pd
+train = pd.read_csv(r'datasets/final_data.csv', na_values=[' ','??'])
+train.drop(train.columns[[0]], axis=1, inplace=True)
+
+X_train=train.drop(columns=['Churn'])
+Y_train=train[['Churn']]
+
+from sklearn.ensemble import GradientBoostingClassifier
+classifier = GradientBoostingClassifier(n_estimators=30, learning_rate=0.01, max_depth=7)
+classifier.fit(X_train, Y_train)
 
 app = Flask(__name__)
 
