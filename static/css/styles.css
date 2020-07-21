@@ -171,6 +171,10 @@ ul li::before {
 /* Media Queries */
 
 @media screen and (max-width: 480px) {
+
+    .head_section {
+        max-width: 480px;
+    }
   
     form {
       max-width: 480px;
