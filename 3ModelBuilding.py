@@ -26,3 +26,7 @@ df_final.to_csv(r'datasets/final_data.csv')
 # import pickle
 # filename = 'GB_Churn_model.pkl'
 # pickle.dump(gb, open(filename, 'wb'))
+
+'''There was an error while hosting this project in Heroku due to the .pkl file.
+Heroku was not able to load the .pkl file of the model. 
+Hence I commented the about piece of code and trained the model in app.py'''
