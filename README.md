@@ -4,7 +4,7 @@
 <li> This project is implemented as a website for determining whether a customer is satisfied from the telecom service or not.
 <li> Website link: <i>https://customer-churn-detection.herokuapp.com/</i>
 <li> Gradient Boosting algorithm is used for classification of churn.
-<li> For demo of the project refer <b><i>Churn_Detection_Demo.mp4</i></b> file.
+<li> For demo of this project refer <b><i>Churn_Detection_Demo.mp4</i></b> file.
 <li> The dataset is taken from Kaggle. It can be found here <i>https://www.kaggle.com/blastchar/telco-customer-churn</i>
 </ul>
 <br>
