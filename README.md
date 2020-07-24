@@ -18,6 +18,6 @@
 
         pip install Flask
 
-<li> Open the project dolder. Open command prompt/terminal.
+<li> Open the project folder. Open command prompt/terminal.
 <li> Run app.py file.
 </ol>
