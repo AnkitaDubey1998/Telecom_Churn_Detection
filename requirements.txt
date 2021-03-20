@@ -1,6 +1,6 @@
 Flask==1.1.1
 gunicorn==19.9.0
-Jinja2==2.10.1
+Jinja2==2.11.3
 pandas>=0.24.0
 numpy>=1.16.1
 scipy>=1.2.1
